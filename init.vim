@@ -50,10 +50,6 @@ set expandtab
 set number
 set relativenumber
 
-" set ctags path
-set tags+=/usr/include/tags
-
-
 " turn off smart indenting
 set si
 
@@ -68,7 +64,7 @@ set keywordprg=
 set scrolloff=10
 
 " highlight when I've gone past the 80 character width
-highlight ColorColumn ctermbg=magenta
+highlight ColorColumn ctermbg=brown
 call matchadd('ColorColumn', '\%81v', 30)
 
 " set map leader for custom key-maps
