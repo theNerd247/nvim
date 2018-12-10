@@ -48,10 +48,10 @@ set expandtab
 
 " show lines numbers
 set number
-"set relativenumber
+set relativenumber
 
 " turn off smart indenting
-set si
+set nosmartindent
 
 " turn off spell check
 set nospell
@@ -61,7 +61,7 @@ set keywordprg=
 
 " set the number of lines to buffer the cursor with (above or below) when
 " scrolling
-"set scrolloff=10
+set scrolloff=10
 
 " highlight when I've gone past the 80 character width
 highlight ColorColumn ctermbg=brown
