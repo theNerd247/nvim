@@ -1,0 +1,4 @@
+new Class() {
+  constructor() {
+  }
+}
