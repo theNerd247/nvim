@@ -1,3 +1,7 @@
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
 " add the directory to 'runtimepath'
 set nocompatible
 
@@ -87,7 +91,7 @@ nmap <leader>q :q<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
-nmap <leader>ga :!git add %<cr>:!git status<cr>
+nmap <leader>prez :so ~/.config/nvim/prez.vim<cr>
 
 "-- PRINTER {{{ ------------------------------------------------------
 set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
