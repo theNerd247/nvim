@@ -92,6 +92,9 @@ nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
 nmap <leader>prez :so ~/.config/nvim/prez.vim<cr>
+nmap <leader>ga :Gwrite<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gs :Gstatus<cr>
 
 "-- PRINTER {{{ ------------------------------------------------------
 set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
