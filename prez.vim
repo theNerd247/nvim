@@ -1,4 +1,4 @@
 set number 
 set norelativenumber
-set scrolloff=
+set scrolloff=0
 set wrap
