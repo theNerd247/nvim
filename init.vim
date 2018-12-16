@@ -1,3 +1,7 @@
+call plug#begin('~/.local/share/nvim/plugged')
+Plug 'tpope/vim-fugitive'
+call plug#end()
+
 " add the directory to 'runtimepath'
 set nocompatible
 
@@ -8,8 +12,8 @@ filetype plugin on
 " netrw
 let g:netrw_banner=0        " disable annoying banner
 let g:netrw_browse_split=2  " vertically split window
-let g:netrw_preview=1
 let g:netrw_altv=1          " open splits to the right
+let g:netrw_winsize=90
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
@@ -50,12 +54,8 @@ set expandtab
 set number
 set relativenumber
 
-" set ctags path
-set tags+=/usr/include/tags
-
-
 " turn off smart indenting
-set si
+set nosmartindent
 
 " turn off spell check
 set nospell
@@ -68,7 +68,7 @@ set keywordprg=
 set scrolloff=10
 
 " highlight when I've gone past the 80 character width
-highlight ColorColumn ctermbg=magenta
+highlight ColorColumn ctermbg=brown
 call matchadd('ColorColumn', '\%81v', 30)
 
 " set map leader for custom key-maps
@@ -95,4 +95,11 @@ nmap <leader>q :q<cr>
 nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
+nmap <leader>prez :so ~/.config/nvim/prez.vim<cr>
+nmap <leader>nh :nohlsearch<cr>
+nmap <leader>ga :Gwrite<cr>
+nmap <leader>gc :Gcommit<cr>
+nmap <leader>gs :Gstatus<cr>
 
+nnoremap <leader>class :-1read $HOME/.config/nvim/newJsClass.js<cr>
+nnoremap <leader>desc :-1read /Users/noahharvey/.config/nvim/jsDescribe.js<cr>jjlll
