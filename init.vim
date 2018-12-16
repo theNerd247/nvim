@@ -100,6 +100,7 @@ nmap <leader>nh :nohlsearch<cr>
 nmap <leader>ga :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gs :Gstatus<cr>
-
 nnoremap <leader>class :-1read $HOME/.config/nvim/newJsClass.js<cr>
 nnoremap <leader>desc :-1read /Users/noahharvey/.config/nvim/jsDescribe.js<cr>jjlll
+
+vmap <leader>s y:%s/<C-r>"/
