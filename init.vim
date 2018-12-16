@@ -7,7 +7,7 @@ filetype plugin on
 
 " netrw
 let g:netrw_banner=0        " disable annoying banner
-let g:netrw_browse_split=4  " open in prior window
+let g:netrw_browse_split=2  " vertically split window
 let g:netrw_preview=1
 let g:netrw_altv=1          " open splits to the right
 let g:netrw_liststyle=3     " tree view
@@ -74,6 +74,10 @@ call matchadd('ColorColumn', '\%81v', 30)
 " set map leader for custom key-maps
 let mapleader = "," 
 
+" printer options
+set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
+set printheader=" "
+
 " custom mappings
 nmap <leader>co :copen<cr><C-w><S-j>
 nmap <leader>ns :nohlsearch<cr>
@@ -92,7 +96,3 @@ nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
 
-"-- PRINTER {{{ ------------------------------------------------------
-set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
-set printheader=" "
-"-- END PRINTER }}} --------------------------------------------------
