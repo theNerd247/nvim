@@ -97,7 +97,7 @@ nmap <leader>bn :bn<cr>
 nmap <leader>bp :bp<cr>
 nmap <leader>bd :bd<cr>
 nmap <leader>prez :so ~/.config/nvim/prez.vim<cr>
-nmap <leader>nh :nohlsearch<cr>
+nmap <leader>no :nohlsearch<cr>
 nmap <leader>ga :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gs :Gstatus<cr>
