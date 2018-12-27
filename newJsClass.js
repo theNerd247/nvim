@@ -1,4 +1,4 @@
-new Class() {
+class NewClass {
   constructor() {
   }
 }
