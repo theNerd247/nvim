@@ -19,7 +19,8 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 " set the mode of mouse
-set mouse=a
+" set mouse=a
+set mouse=
 
 " I like syntax highlighting
 syntax enable
