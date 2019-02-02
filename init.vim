@@ -69,7 +69,7 @@ set keywordprg=
 set scrolloff=10
 
 " highlight when I've gone past the 80 character width
-highlight ColorColumn ctermbg=brown
+highlight ColorColumn ctermbg=darkgrey
 call matchadd('ColorColumn', '\%81v', 30)
 
 " set map leader for custom key-maps
