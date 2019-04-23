@@ -105,8 +105,9 @@ nmap <leader>no :nohlsearch<cr>
 nmap <leader>ga :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gs :Gstatus<cr>
-nnoremap <leader>class :-1read $HOME/.config/nvim/newJsClass.js<cr>
-nnoremap <leader>desc :-1read /Users/noahharvey/.config/nvim/jsDescribe.js<cr>jjlll
 nmap <leader>gd :Gvdiff<cr>
+nnoremap <leader>class :-1read $HOME/.config/nvim/snippets/js/newJsClass.js<cr>
+nnoremap <leader>desc :-1read $HOME/.config/nvim/snippets/js/jsDescribe.js<cr>jjlll
+nnoremap <leader>jsmodel :-1read $HOME/.config/nvim/snippets/js/expressModel.js<cr>:%s/X/
 
 vmap <leader>s y:%s/<C-r>"/
