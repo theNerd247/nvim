@@ -13,8 +13,8 @@ filetype plugin on
 
 " netrw
 let g:netrw_banner=0        " disable annoying banner
-let g:netrw_browse_split=2  " vertically split window
-let g:netrw_altv=1          " open splits to the right
+let g:netrw_browse_split=0  " horizontally split window
+" let g:netrw_altv=1          " open splits to the right
 let g:netrw_winsize=90
 let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
@@ -85,6 +85,8 @@ let mapleader = ","
 set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
 set printheader=" "
 
+set wildignore=*.o,*.lib,node_modules,tags,result,*.tex
+
 " custom mappings
 nmap <leader>co :copen<cr><C-w><S-j>
 nmap <leader>ns :nohlsearch<cr>
@@ -108,8 +110,12 @@ nmap <leader>ga :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gd :Gvdiff<cr>
+nmap <leader>nw :Netrw<cr>
 nnoremap <leader>class :-1read $HOME/.config/nvim/snippets/js/newJsClass.js<cr>
 nnoremap <leader>desc :-1read $HOME/.config/nvim/snippets/js/jsDescribe.js<cr>jjlll
 nnoremap <leader>jsmodel :-1read $HOME/.config/nvim/snippets/js/expressModel.js<cr>:%s/X/
-
+nnoremap <leader>lang :-1read $HOME/.config/nvim/snippets/haskell/language.hs<cr>
+nnoremap <leader>gm :%s/^\s\{-}\n\{-}#.*\n\{-}\s\{-}\n//g<cr>:%s/\n\n/\r/g<cr>{j<C-v>]]I* <Esc>
+noremap <leader>hg :!hoogle <C-R><C-W><cr>
+noremap <leader>vg :vimgrep /\<<C-R><C-W>\>/ ./**<cr>
 vmap <leader>s y:%s/<C-r>"/
