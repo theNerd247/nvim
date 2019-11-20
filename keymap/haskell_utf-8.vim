@@ -5,6 +5,7 @@ let b:keymap_name = "haskell"
 
 loadkeymap
 forall ∀
--> →
-=> ⇒
-
+->     →
+=>     ⇒
+\\(    λ
+E.     ∃

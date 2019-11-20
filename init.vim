@@ -1,6 +1,7 @@
 if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-fugitive'
+  Plug 'junegunn/vim-easy-align'
   call plug#end()
 endif
 
@@ -20,9 +21,22 @@ let g:netrw_liststyle=3     " tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
+"EasyAlign
+let g:easy_align_delimiters = { '?': { 'pattern': '?' } }
+
+" start EasyAlign (visual)
+xmap ga <Plug>(EasyAlign)
+" start EasyAlign (normal)
+nmap ga <Plug>(EasyAlign)
+
+
+
 " Per default, netrw leaves unmodified buffers open. This autocommand
 " deletes netrw's buffer once it's hidden (using ':q', for example)
 autocmd FileType netrw setl bufhidden=delete
+
+" for make VueJs files appear as html
+autocmd BufRead,BufNewFile *.vue setfiletype html
 
 " set the mode of mouse
 " set mouse=a
@@ -75,7 +89,8 @@ set keywordprg=
 set scrolloff=10
 
 " highlight when I've gone past the 80 character width
-highlight ColorColumn ctermbg=darkgrey
+" ctermbg=lightgrey
+highlight ColorColumn cterm=reverse ctermbg=none
 call matchadd('ColorColumn', '\%81v', 30)
 
 " set map leader for custom key-maps
@@ -85,37 +100,78 @@ let mapleader = ","
 set printoptions=top:1in,bottom:1in,left:0.5in,right:0.5in
 set printheader=" "
 
-set wildignore=*.o,*.lib,node_modules,tags,result,*.tex
+set wildignore+=*.o
+set wildignore+=*.lib
+set wildignore+=*/node_modules/*
+set wildignore+=tags
+set wildignore+=result
+set wildignore+=*.dyn_*
+set wildignore+=*.hi
+set wildignore+=*.so
+set wildignore+=*.a
+set wildignore+=*/dist-newtyle/*
+set wildignore+=*/dist/*
 
 " custom mappings
+
+" open quickfix window
 nmap <leader>co :copen<cr><C-w><S-j>
-nmap <leader>ns :nohlsearch<cr>
-nmap <leader>sc :copen<cr>
+" center line on screen
 nmap <space> zz
+" make
 nmap <leader>m :make<cr>
+" vertical split
 nmap <leader>vs :vsp<CR>
+" horizontal split
 nmap <leader>hs :sp<CR>
+" write
 nmap <leader>w :w<cr>
+" open this file for editing
 nmap <leader>se :tabnew ~/.config/nvim/init.vim<cr>
+" open help in new tab
 nmap <leader>hh :tab help 
+" open new tab
 nmap <leader>tn :tabnew<cr>
+" close tab
 nmap <leader>td :tabclose<cr>
+" quit
 nmap <leader>q :q<cr>
+" next buffer
 nmap <leader>bn :bn<cr>
+" previous buffer
 nmap <leader>bp :bp<cr>
+" close buffer
 nmap <leader>bd :bd<cr>
+" switch to a presentation friend mode
 nmap <leader>prez :so ~/.config/nvim/prez.vim<cr>
+" clear search highlight
 nmap <leader>no :nohlsearch<cr>
+" git add
 nmap <leader>ga :Gwrite<cr>
+" git commit
 nmap <leader>gc :Gcommit<cr>
+" git status
 nmap <leader>gs :Gstatus<cr>
+" git vetical diff
 nmap <leader>gd :Gvdiff<cr>
+" open netrw
 nmap <leader>nw :Netrw<cr>
+" javascript class snippet
 nnoremap <leader>class :-1read $HOME/.config/nvim/snippets/js/newJsClass.js<cr>
-nnoremap <leader>desc :-1read $HOME/.config/nvim/snippets/js/jsDescribe.js<cr>jjlll
+" javascript model
 nnoremap <leader>jsmodel :-1read $HOME/.config/nvim/snippets/js/expressModel.js<cr>:%s/X/
-nnoremap <leader>lang :-1read $HOME/.config/nvim/snippets/haskell/language.hs<cr>
+" haskell LANGUAGE pragma
+nnoremap <leader>lang :-1read $HOME/.config/nvim/snippets/haskell/language.hs<cr>2f<space>
+nnoremap <leader>module :-1read $HOME/.config/nvim/snippets/haskell/module.hs<cr>2f<space>
+" merge multiple commit messages in a squash to a bulletted list
 nnoremap <leader>gm :%s/^\s\{-}\n\{-}#.*\n\{-}\s\{-}\n//g<cr>:%s/\n\n/\r/g<cr>{j<C-v>]]I* <Esc>
+" hoogle the current word
 noremap <leader>hg :!hoogle <C-R><C-W><cr>
+" vim grep current word
 noremap <leader>vg :vimgrep /\<<C-R><C-W>\>/ ./**<cr>
+" set keymap to haskell
+noremap <leader>kh :set keymap=haskell
+noremap <leader>kp :set keymap=pollen
+" replace currently highlighted text block with regex
 vmap <leader>s y:%s/<C-r>"/
+nmap <leader>s, :s/, \{-}/\r,/g
