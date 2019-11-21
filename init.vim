@@ -1,6 +1,8 @@
-call plug#begin('~/.local/share/nvim/plugged')
-Plug 'tpope/vim-fugitive'
-call plug#end()
+if has('nvim')
+  call plug#begin('~/.local/share/nvim/plugged')
+  Plug 'tpope/vim-fugitive'
+  call plug#end()
+endif
 
 " add the directory to 'runtimepath'
 set nocompatible
