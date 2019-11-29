@@ -3,6 +3,7 @@ if has('nvim')
   Plug 'tpope/vim-fugitive'
   Plug 'junegunn/vim-easy-align'
   Plug 'tpope/vim-dispatch'
+  Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
   call plug#end()
 endif
 
