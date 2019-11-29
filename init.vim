@@ -2,6 +2,7 @@ if has('nvim')
   call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'junegunn/vim-easy-align'
+  Plug 'tpope/vim-dispatch'
   call plug#end()
 endif
 
@@ -22,7 +23,7 @@ let g:netrw_list_hide=netrw_gitignore#Hide()
 let g:netrw_list_hide.=',\(^\|\s\s\)\zs\.\S\+'
 
 "EasyAlign
-let g:easy_align_delimiters = { '?': { 'pattern': '?' } }
+let g:easy_align_delimiters = { '?': { 'pattern': '?' }, '(': { 'pattern': '(' } }
 
 " start EasyAlign (visual)
 xmap ga <Plug>(EasyAlign)
@@ -175,3 +176,4 @@ noremap <leader>kp :set keymap=pollen
 " replace currently highlighted text block with regex
 vmap <leader>s y:%s/<C-r>"/
 nmap <leader>s, :s/, \{-}/\r,/g
+nmap <leader>me :read !grep "const .*=" %<cr>vap :s/^const \(.\{-}\) =.*$/, \1/g<cr>o}<ESC>{jr{
