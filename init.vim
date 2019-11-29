@@ -4,6 +4,7 @@ if has('nvim')
   Plug 'junegunn/vim-easy-align'
   Plug 'tpope/vim-dispatch'
   Plug 'moby/moby' , {'rtp': '/contrib/syntax/vim/'}
+  Plug 'thanethomson/vim-jenkinsfile'
   call plug#end()
 endif
 
